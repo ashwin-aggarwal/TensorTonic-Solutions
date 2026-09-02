@@ -5,7 +5,6 @@ def gradient_descent_quadratic(a: float, b: float, c: float, x0: float, lr: floa
     # Write code here
     x = x0
     for step in range(steps):
-        f = a * (x ** 2) + b * x + c
         slope = 2 * a * x + b
         x -= lr*slope
 
