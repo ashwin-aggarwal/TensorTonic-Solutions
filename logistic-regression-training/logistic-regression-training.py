@@ -11,8 +11,6 @@ def train_logistic_regression(X: np.ndarray, y: np.ndarray, lr: float = 0.1, ste
     Returns the trained weights and bias as (w, b).
     """
     # Write code here
-    X = np.asarray(X, dtype=float)
-    y = np.asarray(y, dtype=float)
     n, m = X.shape          # n = samples, m = features
 
     w = np.zeros(m)         # one weight per feature, 1-D
