@@ -17,14 +17,14 @@ def train_logistic_regression(X: np.ndarray, y: np.ndarray, lr: float = 0.1, ste
     b = 0.0
 
     for _ in range(steps):
-        p = _sigmoid(X @ w + b)   # (n,) predicted probabilities
-        diff = (p - y) / n        # (n,) dL/dz, already averaged
+        predictions = _sigmoid(X @ w + b)   # (n,) predicted probabilities
+        error = (predictions - y) / n        # (n,) dL/dz, already averaged
 
        
-        dw =  X.T @ diff #X.T is mxn and diff is nx1
+        dw =  X.T @ error #X.T is mxn and diff is nx1
         w -= lr*dw
 
-        db = diff.sum()
+        db = error.sum()
         b -= lr*db
         
     return w, float(b)
