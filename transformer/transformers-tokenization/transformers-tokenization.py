@@ -50,6 +50,7 @@ class SimpleTokenizer:
         words = text.lower().split()
         unk_id = self.word_to_id[self.unk_token]
         return [self.word_to_id.get(word, unk_id) for word in words]
+        #return unknown if not in dict
     
     def decode(self, ids: List[int]) -> str:
         """
